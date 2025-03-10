@@ -61,7 +61,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch indexPath.row {
         case 0: self.navigationController?.pushViewController(MVCViewController(navTitle: cellItems[indexPath.row]), animated: true)
-        case 1:self.navigationController?.pushViewController(MVVMViewController(navTitle: cellItems[indexPath.row]), animated: true)
+        case 1: self.navigationController?.pushViewController(MVVMViewController(navTitle: cellItems[indexPath.row]), animated: true)
+        case 3:
+            let useCase = PostUseCase(repository: PostRepository())
+            let viewModel = PostViewModel(useCase: useCase)
+            let viewController = PostViewController(navTitle: cellItems[indexPath.row], viewModel: viewModel)  // Presentation Layer
+            
+            self.navigationController?.pushViewController(viewController, animated: true)
         default: break
         }
     }

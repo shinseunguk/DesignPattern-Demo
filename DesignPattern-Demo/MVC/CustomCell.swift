@@ -15,6 +15,7 @@ class CustomCell: UITableViewCell {
     private let titleLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 16, weight: .medium)
         $0.textColor = .black
+        $0.numberOfLines = 0
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

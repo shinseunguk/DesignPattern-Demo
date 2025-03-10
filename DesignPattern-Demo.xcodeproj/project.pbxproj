@@ -12,6 +12,8 @@
 		ACF845BF2D7E7839008B5C8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ACF845BE2D7E7839008B5C8C /* Alamofire */; };
 		ACF845D82D7EAFD2008B5C8C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ACF845D72D7EAFD2008B5C8C /* RxCocoa */; };
 		ACF845DA2D7EAFD2008B5C8C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ACF845D92D7EAFD2008B5C8C /* RxSwift */; };
+		ACF845EE2D7EC34C008B5C8C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = ACF845ED2D7EC34C008B5C8C /* Moya */; };
+		ACF845F02D7EC34C008B5C8C /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = ACF845EF2D7EC34C008B5C8C /* RxMoya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +77,9 @@
 			files = (
 				ACF845BF2D7E7839008B5C8C /* Alamofire in Frameworks */,
 				ACF845AF2D7E765F008B5C8C /* Then in Frameworks */,
+				ACF845EE2D7EC34C008B5C8C /* Moya in Frameworks */,
 				ACF845DA2D7EAFD2008B5C8C /* RxSwift in Frameworks */,
+				ACF845F02D7EC34C008B5C8C /* RxMoya in Frameworks */,
 				ACF845D82D7EAFD2008B5C8C /* RxCocoa in Frameworks */,
 				ACF845BC2D7E7825008B5C8C /* SnapKit in Frameworks */,
 			);
@@ -143,6 +147,8 @@
 				ACF845BE2D7E7839008B5C8C /* Alamofire */,
 				ACF845D72D7EAFD2008B5C8C /* RxCocoa */,
 				ACF845D92D7EAFD2008B5C8C /* RxSwift */,
+				ACF845ED2D7EC34C008B5C8C /* Moya */,
+				ACF845EF2D7EC34C008B5C8C /* RxMoya */,
 			);
 			productName = "DesignPattern-Demo";
 			productReference = ACF845792D7E7353008B5C8C /* DesignPattern-Demo.app */;
@@ -231,6 +237,7 @@
 				ACF845BA2D7E7825008B5C8C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				ACF845BD2D7E7839008B5C8C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				ACF845D62D7EAFD2008B5C8C /* XCRemoteSwiftPackageReference "RxSwift" */,
+				ACF845EC2D7EC34B008B5C8C /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = ACF8457A2D7E7353008B5C8C /* Products */;
@@ -627,6 +634,14 @@
 				minimumVersion = 6.9.0;
 			};
 		};
+		ACF845EC2D7EC34B008B5C8C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -654,6 +669,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ACF845D62D7EAFD2008B5C8C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		ACF845ED2D7EC34C008B5C8C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACF845EC2D7EC34B008B5C8C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		ACF845EF2D7EC34C008B5C8C /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACF845EC2D7EC34B008B5C8C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
