@@ -1,5 +1,5 @@
 //
-//  MVCCell.swift
+//  CustomCell.swift
 //  DesignPattern-Demo
 //
 //  Created by ukseung.dev on 3/10/25.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Then
 
-class MVCCell: UITableViewCell {
+class CustomCell: UITableViewCell {
     static let identifier = "MVCCell"
 
     private let titleLabel = UILabel().then {

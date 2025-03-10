@@ -18,7 +18,7 @@ final class MVCViewController: UIViewController {
     lazy var tableView = UITableView().then {
         $0.dataSource = self
         $0.delegate = self
-        $0.register(MVCCell.self, forCellReuseIdentifier: MVCCell.identifier)
+        $0.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
     }
     
     init(navTitle: String) {
@@ -83,7 +83,7 @@ extension MVCViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MVCCell.identifier, for: indexPath) as! MVCCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as! CustomCell
         cell.configure(with: users[indexPath.row].username)
         return cell
     }
