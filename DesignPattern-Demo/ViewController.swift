@@ -6,14 +6,59 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class ViewController: UIViewController {
+    let cellItems = ["MVC", "MVVM", "VIPER", "Clean Architecutre"]
+    
+    lazy var tableView = UITableView().then {
+        $0.dataSource = self
+        $0.delegate = self
+        $0.register(DesignPatternCell.self, forCellReuseIdentifier: DesignPatternCell.identifier)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setNavigationBar()
+        setUI()
+        setAttribute()
     }
+}
 
+extension ViewController: ViewAttributes {
+    func setNavigationBar() {
+        self.navigationItem.title = "DesignPattern"
+    }
+    
+    func setUI() {
+        self.view.backgroundColor = .white
+        
+        [
+            tableView
+        ].forEach { self.view.addSubview($0) }
+    }
+    
+    func setAttribute() {
+        tableView.snp.makeConstraints {
+            $0.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
+    }
+}
 
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DesignPatternCell.identifier, for: indexPath) as! DesignPatternCell
+        cell.configure(with: cellItems[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
 }
 
