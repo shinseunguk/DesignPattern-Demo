@@ -21,6 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             self.window?.rootViewController = rootNavigationController
             self.window?.makeKeyAndVisible()
+        
+            UIViewController.swizzleViewDidLoad
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

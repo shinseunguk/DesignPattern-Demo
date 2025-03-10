@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     let cellItems = ["MVC", "MVVM", "VIPER", "Clean Architecutre"]
     
     lazy var tableView = UITableView().then {
@@ -33,8 +33,6 @@ extension ViewController: ViewAttributes {
     }
     
     func setUI() {
-        self.view.backgroundColor = .white
-        
         [
             tableView
         ].forEach { self.view.addSubview($0) }
@@ -59,6 +57,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch indexPath.row {
+        case 0: self.navigationController?.pushViewController(MVCViewController(navTitle: cellItems[indexPath.row]), animated: true)
+        default: break
+        }
     }
 }
 
