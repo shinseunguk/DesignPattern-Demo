@@ -60,8 +60,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.row {
-        case 0: self.navigationController?.pushViewController(MVCViewController(navTitle: cellItems[indexPath.row]), animated: true)
-        case 1: self.navigationController?.pushViewController(MVVMViewController(navTitle: cellItems[indexPath.row]), animated: true)
+        case 0:
+            self.navigationController?.pushViewController(MVCViewController(navTitle: cellItems[indexPath.row]), animated: true)
+        case 1:
+            self.navigationController?.pushViewController(MVVMViewController(navTitle: cellItems[indexPath.row]), animated: true)
+        case 2:
+            let rouuter = TodoListRouter()
+            let interactor = TodoListInteractor()
+            let presenter = TodoListPresenter(router: rouuter, interactor: interactor)
+            self.navigationController?.pushViewController(TodoListViewController(navTitle: cellItems[indexPath.row], presenter: presenter), animated: true)
         case 3:
             let useCase = PostUseCase(repository: PostRepository())
             let viewModel = PostViewModel(useCase: useCase)
